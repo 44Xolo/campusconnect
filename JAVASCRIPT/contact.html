@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Connect — Contact (Humanized & Enhanced)</title>
+  <meta name="description" content="Contact Campus Connect — enquiries, support, partnerships." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Small, human-touched tweaks for feel */
+    :root{--primary:#1e3a8a;--secondary:#2563eb;--accent:#16a34a;--bg:#f9fafb;--text:#0f172a;--muted:#6b7280;--card:#fff;--shadow:0 10px 25px rgba(0,0,0,.08),0 2px 8px rgba(0,0,0,.05);--ring:0 0 0 3px rgba(37,99,235,.12)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:var(--bg); color:var(--text); line-height:1.6}
+
+    header{background:var(--card); border-bottom:1px solid #eef2f7; position:sticky; top:0; z-index:60}
+    .nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:1rem}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;color:var(--primary)}
+    .mark{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;font-weight:800}
+
+    nav{position:relative}
+    nav ul{display:flex;gap:1.25rem;list-style:none}
+    nav a{text-decoration:none;color:var(--text);font-weight:600}
+    nav a:hover{color:var(--secondary)}
+    #menuBtn{display:none;border:1px solid #e6eef8;background:#fff;padding:.45rem .65rem;border-radius:10px}
+
+    main{max-width:1100px;margin:auto;padding:2.5rem 1.25rem}
+    h1{text-align:center;color:var(--primary);font-size:2.4rem;margin-bottom:.6rem}
+    .sub{max-width:70ch;margin:0.4rem auto 1.6rem;text-align:center;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .left{grid-column:span 5}
+    .right{grid-column:span 7}
+
+    .card{background:var(--card);padding:1.6rem;border-radius:14px;box-shadow:var(--shadow);border:1px solid #eef2f7}
+    .card h2{color:var(--secondary);margin-bottom:.6rem}
+    .muted{color:var(--muted)}
+    .contact-list p{margin:.45rem 0}
+
+    iframe{width:100%;height:220px;border-radius:12px;border:none}
+
+    /* Locations grid inside the right column */
+    .locations { display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; align-items:start; }
+    .loc { background: #fff; border-radius:12px; padding:0.8rem; border:1px solid #eef2f7; box-shadow:var(--shadow); }
+    .loc h4 { margin:0 0 .4rem; color:var(--primary); }
+    .loc p { margin:.25rem 0; color:var(--muted); font-size:0.95rem; }
+
+    label{display:block;font-weight:600;margin-top:1rem;margin-bottom:.35rem}
+    input, textarea, select{width:100%;padding:.78rem;border:1px solid #d8e0ea;border-radius:10px;font-size:1rem;transition:box-shadow .12s, border-color .12s}
+    input:focus, textarea:focus, select:focus{outline:none;border-color:var(--secondary);box-shadow:var(--ring)}
+    textarea{min-height:120px;resize:vertical}
+
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+    .actions{display:flex;gap:.6rem;align-items:center;margin-top:1rem}
+
+    button{background:var(--accent);color:#fff;padding:.95rem 1.2rem;border-radius:10px;border:none;font-weight:800;cursor:pointer}
+    button.ghost{background:#fff;border:1px solid #eef2f7;color:var(--text)}
+
+    .status{display:none;padding:.75rem;border-radius:10px;margin-top:1rem}
+    .status.ok{display:block;background:#ecfdf3;border:1px solid #86efac;color:#065f46}
+    .status.err{display:block;background:#fff1f2;border:1px solid #fecaca;color:#991b1b}
+
+    footer{text-align:center;color:var(--muted);padding:1.6rem 1rem}
+
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.left,.right{grid-column:auto}.row{grid-template-columns:1fr}.sub{padding:0 1rem}.nav{padding:.8rem}.locations{grid-template-columns:1fr}}
+    @media (max-width:640px){#menuBtn{display:inline-block}nav ul{display:none;position:absolute;right:1rem;top:56px;background:var(--card);padding:.6rem;border-radius:10px;border:1px solid #eef2f7;box-shadow:var(--shadow)}nav ul.open{display:flex;flex-direction:column;min-width:180px}nav li a{padding:.5rem .6rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="index.html" class="brand" aria-label="Campus Connect home"><div class="mark" aria-hidden="true">CC</div><span>Campus Connect</span></a>
+      <nav aria-label="Main navigation">
+        <button id="menuBtn" aria-controls="mainNav" aria-expanded="false">Menu</button>
+        <ul id="mainNav">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Contact Campus Connect</h1>
+    <p class="sub">Questions about our services, partnerships, or volunteering? Drop us a line and we’ll route it to the right team.</p>
+
+    <div class="grid">
+      <div class="left">
+        <div class="card contact-list">
+          <h2>Contact Info</h2>
+          <p><strong>Email:</strong> <a href="mailto:info@campusconnect.org">info@campusconnect.org</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+27689830301">+27 68 983 0301</a></p>
+          <p><strong>Social:</strong> <a href="#">@CampusConnect</a></p>
+
+          <h2 style="margin-top:1rem">Offices & Hours</h2>
+          <p class="muted"><strong>Johannesburg</strong><br/>Mon–Fri, 09:00–17:00<br/>1st Floor, Student Hub, Parktown</p>
+          <p class="muted"><strong>Cape Town</strong><br/>Mon–Fri, 09:00–17:00<br/>Suite 4, Learning Centre, Gardens</p>
+        </div>
+
+        <div style="height:1rem"></div>
+
+        <div class="card" aria-hidden="true">
+          <h2>Quick links</h2>
+          <p class="muted">Support docs • FAQs • Volunteer guide</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="card">
+          <h2>Send Us a Message</h2>
+
+          <form id="contactForm" novalidate>
+            <!-- honeypot for bots -->
+            <input type="text" name="hp" class="hidden" style="display:none!important" autocomplete="off" tabindex="-1" aria-hidden="true">
+
+            <div class="row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Lerato Mokoena" required>
+                <small class="error" id="err-name" style="display:none;color:#b91c1c">Please enter your name.</small>
+              </div>
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" placeholder="071 234 5678">
+              </div>
+            </div>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@university.ac.za" required>
+            <small class="error" id="err-email" style="display:none;color:#b91c1c">Please provide a valid email.</small>
+
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="general">General enquiry</option>
+              <option value="support">Support</option>
+              <option value="partnerships">Partnerships</option>
+              <option value="volunteer">Volunteer</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+            <small class="error" id="err-message" style="display:none;color:#b91c1c">Tell us a bit so we can help.</small>
+
+            <div class="actions">
+              <button type="submit">Send message</button>
+              <button type="reset" class="ghost">Reset</button>
+            </div>
+
+            <div id="status" class="status" role="status" aria-live="polite" style="display:none"></div>
+          </form>
+        </div>
+
+        <div style="height:1rem"></div>
+
+        <!-- Presentable Locations: two cards with maps and addresses -->
+        <div class="locations">
+          <div class="loc">
+            <h4>Johannesburg Office</h4>
+            <p class="muted"><strong>Student Hub, Parktown</strong><br/>Corner of University Ave & Park Lane<br/>Johannesburg, 2193</p>
+            <p class="muted"><strong>Office hours:</strong> Mon–Fri, 09:00–17:00</p>
+            <!-- Google Maps embed for Johannesburg -->
+            <iframe loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.1148!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950bf9%3A0x0!2zMjbCsDEyJzQ2LjAiUyAyOMKwMDInMzAuMiJF!5e0!3m2!1sen!2sza!4v0000000000"
+              aria-label="Johannesburg office location on map"></iframe>
+            <p style="margin-top:.5rem"><a href="https://goo.gl/maps/" target="_blank" rel="noopener">Open in Google Maps</a></p>
+          </div>
+
+          <div class="loc">
+            <h4>Cape Town Office</h4>
+            <p class="muted"><strong>Learning Centre, Gardens</strong><br/>42 Rose St, Gardens<br/>Cape Town, 8001</p>
+            <p class="muted"><strong>Office hours:</strong> Mon–Fri, 09:00–17:00</p>
+            <!-- Google Maps embed for Cape Town -->
+            <iframe loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.7604!2d18.4241!3d-33.9249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc6760%3A0x0!2zMzPCsDU1JzU3LjAiUyAxOMKwMjUnMzguNiJF!5e0!3m2!1sen!2sza!4v0000000000"
+              aria-label="Cape Town office location on map"></iframe>
+            <p style="margin-top:.5rem"><a href="https://goo.gl/maps/" target="_blank" rel="noopener">Open in Google Maps</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Campus Connect • Built for students, by students.</small>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if(menuBtn){
+      menuBtn.addEventListener('click', () => {
+        const open = mainNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // form handling (client-side, friendly)
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // honeypot
+      if(form.querySelector('input[name="hp"]').value){
+        // likely a bot — silently ignore
+        return;
+      }
+
+      // reset
+      statusEl.style.display='none';
+      ['err-name','err-email','err-message'].forEach(id=>document.getElementById(id).style.display='none');
+
+      // basic checks
+      let ok=true;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if(!name){ document.getElementById('err-name').style.display='block'; ok=false }
+      if(!email || !email.includes('@')){ document.getElementById('err-email').style.display='block'; ok=false }
+      if(!message){ document.getElementById('err-message').style.display='block'; ok=false }
+      if(!ok) return;
+
+      // simulate submit — replace with fetch() to send to your backend
+      statusEl.className='status ok';
+      statusEl.textContent='Thanks — your message has been sent. We typically reply within 2–3 working days.';
+      statusEl.style.display='block';
+      form.reset();
+      statusEl.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  </script>
+</body>
+</html>
+
