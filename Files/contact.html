@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Connect — Contact</title>
+  <meta name="description" content="Contact Campus Connect — enquiries, support, partnerships." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue:#1e3a8a;
+      --secondary:#2563eb;
+      --green:#16a34a;
+      --yellow:#ffdd59;
+      --bg:#f9fafb;
+      --text:#0f172a;
+      --muted:#6b7280;
+      --card:#fff;
+      --shadow:0 10px 25px rgba(0,0,0,.08),0 2px 8px rgba(0,0,0,.05);
+      --ring:0 0 0 3px rgba(37,99,235,.12);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6; overflow-x: hidden;}
+
+    /* Advanced Background with Particles */
+    .particles-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.08);
+      animation: float 20s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-1000%) translateX(100%) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* HEADER / NAV */
+    header{
+      background:var(--card); 
+      border-bottom:1px solid #eef2f7; 
+      position:sticky; 
+      top:0; 
+      z-index:60;
+      animation: slideDown 0.6s ease-out;
+    }
+    
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1rem;
+    }
+    
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+      font-weight:900;
+      color:var(--blue);
+      font-family:'Poppins',sans-serif;
+      transition: transform 0.3s ease;
+    }
+    
+    .brand:hover {
+      transform: translateY(-2px);
+    }
+    
+    .mark{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--blue),var(--secondary));
+      color:#fff;
+      font-weight:800;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .brand:hover .mark {
+      transform: rotate(10deg) scale(1.05);
+      box-shadow: 0 5px 15px rgba(37,99,235,.3);
+    }
+
+    nav ul{display:flex;gap:1.25rem;list-style:none}
+    nav a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:600;
+      font-family:'Poppins',sans-serif;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover{color:var(--secondary)}
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    nav a[aria-current="page"]{color:var(--green)}
+    nav a[aria-current="page"]::after {
+      width: 100%;
+      background: var(--green);
+    }
+    
+    #menuBtn{
+      display:none;
+      border:1px solid #e6eef8;
+      background:#fff;
+      padding:.45rem .65rem;
+      border-radius:10px;
+      transition: all 0.3s ease;
+    }
+    
+    #menuBtn:hover {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    /* MAIN */
+    main{
+      max-width:1100px;
+      margin:auto;
+      padding:2.5rem 1.25rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards 0.2s;
+    }
+    
+    h1{
+      text-align:center;
+      color:var(--blue);
+      font-size:2.4rem;
+      margin-bottom:.6rem;
+      font-family:'Poppins',sans-serif;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: expandLine 1s ease forwards 0.8s;
+    }
+    
+    .sub{
+      max-width:70ch;
+      margin:0.4rem auto 1.6rem;
+      text-align:center;
+      color:var(--muted);
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards 0.5s;
+    }
+    
+    .sub a{
+      color:var(--secondary);
+      font-weight:600;
+      text-decoration:none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .sub a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    
+    .sub a:hover{text-decoration:none}
+    .sub a:hover::after {
+      width: 100%;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .left{
+      grid-column:span 5;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideInLeft 0.8s ease forwards 0.6s;
+    }
+    
+    .right{
+      grid-column:span 7;
+      opacity: 0;
+      transform: translateX(20px);
+      animation: slideInRight 0.8s ease forwards 0.6s;
+    }
+
+    .card{
+      background:var(--card);
+      padding:1.8rem;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+      border:1px solid #eef2f7;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .card h2{
+      color:var(--secondary);
+      margin-bottom:.6rem;
+      font-family:'Poppins',sans-serif;
+    }
+    
+    .muted{color:var(--muted)}
+    .contact-list p{margin:.45rem 0}
+
+    iframe{
+      width:100%;
+      height:220px;
+      border-radius:12px;
+      border:none;
+      transition: transform 0.4s ease;
+    }
+    
+    .loc:hover iframe {
+      transform: scale(1.02);
+    }
+
+    /* Locations grid */
+    .locations { 
+      display:grid; 
+      grid-template-columns:1fr 1fr; 
+      gap:1rem; 
+      align-items:start; 
+    }
+    
+    .loc { 
+      background: #fff; 
+      border-radius:12px; 
+      padding:1.2rem; 
+      border:1px solid #eef2f7; 
+      box-shadow:var(--shadow);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .loc.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .loc:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    }
+    
+    .loc h4 { 
+      margin:0 0 .4rem; 
+      color:var(--blue); 
+      font-family:'Poppins',sans-serif;
+    }
+    
+    .loc p { 
+      margin:.25rem 0; 
+      color:var(--muted); 
+      font-size:0.95rem; 
+    }
+
+    label{
+      display:block;
+      font-weight:600;
+      margin-top:1rem;
+      margin-bottom:.35rem;
+      font-family:'Poppins',sans-serif;
+      transition: color 0.3s ease;
+    }
+    
+    input, textarea, select{
+      width:100%;
+      padding:.78rem;
+      border:1px solid #d8e0ea;
+      border-radius:10px;
+      font-size:1rem;
+      font-family:'Open Sans',sans-serif;
+      transition:box-shadow .12s, border-color .12s, transform 0.3s ease;
+    }
+    
+    input:focus, textarea:focus, select:focus{
+      outline:none;
+      border-color:var(--secondary);
+      box-shadow:var(--ring);
+      transform: translateY(-2px);
+    }
+    
+    textarea{
+      min-height:120px;
+      resize:vertical;
+      transition: min-height 0.3s ease;
+    }
+    
+    textarea:focus {
+      min-height: 140px;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:.8rem;
+    }
+    
+    .actions{
+      display:flex;
+      gap:.6rem;
+      align-items:center;
+      margin-top:1.5rem;
+    }
+
+    button{
+      background:var(--green);
+      color:#fff;
+      padding:.95rem 1.5rem;
+      border-radius:10px;
+      border:none;
+      font-weight:800;
+      cursor:pointer;
+      font-family:'Poppins',sans-serif;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+    
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(22,163,74,.3);
+    }
+    
+    button:hover::before {
+      left: 100%;
+    }
+    
+    button.ghost{
+      background:#fff;
+      border:1px solid #eef2f7;
+      color:var(--text);
+    }
+    
+    button.ghost:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+
+    .status{
+      display:none;
+      padding:.75rem;
+      border-radius:10px;
+      margin-top:1rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.5s ease;
+    }
+    
+    .status.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .status.ok{
+      background:#ecfdf3;
+      border:1px solid #86efac;
+      color:#065f46;
+    }
+    
+    .status.err{
+      background:#fff1f2;
+      border:1px solid #fecaca;
+      color:#991b1b;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      padding:1.6rem 1rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards 1s;
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+      0% { opacity: 0; transform: translateX(-20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInRight {
+      0% { opacity: 0; transform: translateX(20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes expandLine {
+      0% { transform: scaleX(0); }
+      100% { transform: scaleX(1); }
+    }
+
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .left,.right{grid-column:auto}
+      .row{grid-template-columns:1fr}
+      .sub{padding:0 1rem}
+      .locations{grid-template-columns:1fr}
+    }
+    
+    @media (max-width:640px){
+      #menuBtn{display:inline-block}
+      nav ul{
+        display:none;
+        position:absolute;
+        right:1rem;
+        top:56px;
+        background:var(--card);
+        padding:.6rem;
+        border-radius:10px;
+        border:1px solid #eef2f7;
+        box-shadow:var(--shadow);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+      }
+      
+      nav ul.open{
+        display:flex;
+        flex-direction:column;
+        min-width:180px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      nav li a{padding:.5rem .6rem}
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Particles -->
+  <div class="particles-container" id="particles"></div>
+
+  <header>
+    <div class="nav">
+      <a href="index.html" class="brand"><div class="mark">CC</div><span>Campus Connect</span></a>
+      <nav>
+        <button id="menuBtn" aria-controls="mainNav" aria-expanded="false">Menu</button>
+        <ul id="mainNav">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="index.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Contact Campus Connect</h1>
+    <p class="sub">
+      Questions about our services, partnerships, or volunteering? 
+      Drop us a line and we'll route it to the right team. <br>
+      <a href="services.html"> Explore our Services</a>
+    </p>
+
+    <div class="grid">
+      <!-- LEFT -->
+      <div class="left">
+        <div class="card contact-list">
+          <h2>Contact Info</h2>
+          <p><strong>Email:</strong> <a href="mailto:info@campusconnect.org">info@campusconnect.org</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+27689830301">+27 68 983 0301</a></p>
+          <p><strong>Social:</strong> <a href="#">@CampusConnect</a></p>
+
+          <h2 style="margin-top:1.5rem">Offices & Hours</h2>
+          <p class="muted"><strong>Johannesburg</strong><br/>Mon–Fri, 09:00–17:00<br/>1st Floor, Student Hub, Parktown</p>
+          <p class="muted"><strong>Cape Town</strong><br/>Mon–Fri, 09:00–17:00<br/>Suite 4, Learning Centre, Gardens</p>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <div class="card">
+          <h2>Send Us a Message</h2>
+
+          <form id="contactForm" novalidate>
+            <input type="text" name="hp" class="hidden" style="display:none!important">
+
+            <div class="row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Lerato Mokoena" required>
+                <small class="error" id="err-name" style="display:none;color:#b91c1c">Please enter your name.</small>
+              </div>
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" placeholder="071 234 5678">
+              </div>
+            </div>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@university.ac.za" required>
+            <small class="error" id="err-email" style="display:none;color:#b91c1c">Please provide a valid email.</small>
+
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="general">General enquiry</option>
+              <option value="support">Support</option>
+              <option value="partnerships">Partnerships</option>
+              <option value="volunteer">Volunteer</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+            <small class="error" id="err-message" style="display:none;color:#b91c1c">Tell us a bit so we can help.</small>
+
+            <div class="actions">
+              <button type="submit">Send message</button>
+              <button type="reset" class="ghost">Reset</button>
+            </div>
+
+            <div id="status" class="status" role="status"></div>
+          </form>
+        </div>
+
+        <div style="height:1rem"></div>
+
+        <!-- Office locations -->
+        <div class="locations">
+          <div class="loc">
+            <h4>Johannesburg Office</h4>
+            <p class="muted"><strong>Student Hub, Parktown</strong><br/>Corner of University Ave & Park Lane<br/>Johannesburg, 2193</p>
+            <iframe loading="lazy" src="https://www.google.com/maps/embed?..."></iframe>
+          </div>
+
+          <div class="loc">
+            <h4>Cape Town Office</h4>
+            <p class="muted"><strong>Learning Centre, Gardens</strong><br/>42 Rose St, Gardens<br/>Cape Town, 8001</p>
+            <iframe loading="lazy" src="https://www.google.com/maps/embed?..."></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Campus Connect • Built for students, by students.</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 30;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random size between 2px and 6px
+        const size = Math.random() * 4 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random position
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        
+        // Random animation delay and duration
+        const delay = Math.random() * 20;
+        const duration = Math.random() * 10 + 20;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.animationDuration = `${duration}s`;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Mobile nav
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if(menuBtn){
+      menuBtn.addEventListener('click', () => {
+        const open = mainNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // Form validation
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if(form.querySelector('input[name="hp"]').value){ return; }
+
+      statusEl.classList.remove('show');
+      ['err-name','err-email','err-message'].forEach(id=>document.getElementById(id).style.display='none');
+
+      let ok=true;
+      if(!form.name.value.trim()){ 
+        document.getElementById('err-name').style.display='block'; 
+        ok=false; 
+      }
+      if(!form.email.value.includes('@')){ 
+        document.getElementById('err-email').style.display='block'; 
+        ok=false; 
+      }
+      if(!form.message.value.trim()){ 
+        document.getElementById('err-message').style.display='block'; 
+        ok=false; 
+      }
+      if(!ok) return;
+
+      statusEl.className='status ok show';
+      statusEl.textContent=' Thanks — your message has been sent. We\'ll reply in 2–3 working days.';
+      form.reset();
+      statusEl.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+
+    // Scroll reveal for location cards
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const locObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe location cards with staggered delay
+    document.querySelectorAll('.loc').forEach((loc, index) => {
+      setTimeout(() => {
+        locObserver.observe(loc);
+      }, index * 200);
+    });
+
+    // Initialize particles
+    createParticles();
+  </script>
+</body>
+</html>

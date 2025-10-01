@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Connect • Sign Up</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body, html { height:100%; width:100%; overflow:hidden; background:#0b0f1a; color:#fff; }
+
+  /* Advanced Background with Particles */
+  .particles-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(78, 205, 196, 0.3);
+    animation: float 15s infinite linear;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-1000%) translateX(100%) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Background Grid */
+  .grid { 
+    position: fixed; 
+    width:100%; 
+    height:100%; 
+    background: 
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size:50px 50px; 
+    animation: moveGrid 20s linear infinite; 
+    z-index:1; 
+  }
+  
+  @keyframes moveGrid { 
+    0% { background-position:0 0,0 0; } 
+    100% { background-position:200px 200px,200px 200px; } 
+  }
+
+  .container { 
+    position:relative; 
+    z-index:2; 
+    display:flex; 
+    flex-direction:column; 
+    justify-content:center; 
+    align-items:center; 
+    height:100%; 
+    text-align:center; 
+  }
+
+  /* Splash Screen */
+  .splash { 
+    opacity:0; 
+    transform:scale(0.95); 
+    animation:splashFadeIn 1.2s forwards 0.5s; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .splash h1 { 
+    font-family:'Poppins', sans-serif; 
+    font-size:clamp(2.5rem,7vw,4.5rem); 
+    font-weight:900; 
+    color:#4ecdc4; 
+    text-shadow:0 0 10px rgba(78,205,196,0.8), 0 0 20px rgba(78,205,196,0.6); 
+    animation:pulseGlow 2s ease-in-out infinite alternate; 
+    margin-bottom:1rem; 
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .splash h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  /* Typing slogan */
+  .slogan { 
+    font-family:'Open Sans', sans-serif; 
+    font-size:1.3rem; 
+    color:#f0f0f0; 
+    min-height:2rem; 
+    border-right: 2px solid #4ecdc4; 
+    white-space:nowrap; 
+    overflow:hidden; 
+    letter-spacing:1.5px; 
+    margin-bottom: 1.5rem;
+  }
+
+  /* Get Started Button */
+  .get-started-btn {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #ffdd59, #ffc107);
+    color: #0b0f1a;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 999px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255,221,89,0.3);
+  }
+  
+  .get-started-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+  }
+  
+  .get-started-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255,221,89,0.5);
+  }
+  
+  .get-started-btn:hover::before {
+    left: 100%;
+  }
+
+  @keyframes splashFadeIn { 
+    0% { opacity:0; transform:scale(0.95) translateY(20px); } 
+    100% { opacity:1; transform:scale(1) translateY(0); } 
+  }
+  
+  @keyframes pulseGlow {
+    0% { text-shadow:0 0 10px rgba(78,205,196,0.8), 0 0 20px rgba(78,205,196,0.6); }
+    50% { text-shadow:0 0 25px rgba(255,221,89,0.9), 0 0 40px rgba(255,221,89,0.6); }
+    100% { text-shadow:0 0 10px rgba(78,205,196,0.8), 0 0 20px rgba(78,205,196,0.6); }
+  }
+  
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* Signup Form */
+  .form-container { 
+    display:none; 
+    flex-direction:column; 
+    align-items:center; 
+    justify-content:center; 
+    height:100%; 
+    text-align:center; 
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+  
+  .form-container.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .form-container h2 { 
+    font-family:'Poppins', sans-serif; 
+    font-size:2.5rem; 
+    margin-bottom:2rem; 
+    color:#4ecdc4; 
+    text-shadow:0 0 5px rgba(78,205,196,0.7); 
+    position: relative;
+  }
+  
+  .form-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #4ecdc4, #ffdd59);
+    border-radius: 2px;
+  }
+  
+  .form-group {
+    position: relative;
+    margin: 1.2rem 0;
+    width: 300px;
+  }
+  
+  .form-container input { 
+    padding:1rem 1.2rem; 
+    width:100%; 
+    border-radius:8px; 
+    border:1px solid rgba(255,255,255,0.1); 
+    outline:none; 
+    font-size:1rem; 
+    font-family:'Open Sans', sans-serif; 
+    background: rgba(255,255,255,0.05);
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .form-container input:focus { 
+    border:1px solid #4ecdc4; 
+    box-shadow:0 0 15px rgba(78,205,196,0.4);
+    background: rgba(255,255,255,0.08);
+  }
+  
+  .form-container input:valid {
+    border-color: rgba(78,205,196,0.5);
+  }
+  
+  .floating-label {
+    position: absolute;
+    top: 1rem;
+    left: 1.2rem;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .form-container input:focus + .floating-label,
+  .form-container input:valid + .floating-label {
+    top: -0.5rem;
+    left: 0.8rem;
+    font-size: 0.8rem;
+    color: #4ecdc4;
+    background: #0b0f1a;
+    padding: 0 0.5rem;
+  }
+
+  .form-container button { 
+    margin-top:1.5rem; 
+    background:linear-gradient(135deg, #ffdd59, #ffc107); 
+    color:#0b0f1a; 
+    font-weight:700; 
+    font-family:'Poppins', sans-serif; 
+    border:none; 
+    border-radius:999px; 
+    padding:1rem 2.5rem; 
+    cursor:pointer; 
+    transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255,221,89,0.3);
+  }
+  
+  .form-container button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+  }
+  
+  .form-container button:hover { 
+    transform:translateY(-3px) scale(1.05); 
+    box-shadow:0 15px 30px rgba(255,221,89,0.5); 
+  }
+  
+  .form-container button:hover::before {
+    left: 100%;
+  }
+  
+  .form-container button:active {
+    transform:translateY(-1px) scale(1.02); 
+  }
+  
+  /* Success Animation */
+  .success-animation {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease;
+  }
+  
+  .success-animation.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 3;
+    stroke: #4ecdc4;
+    stroke-miterlimit: 10;
+    margin: 0 auto 2rem;
+    box-shadow: inset 0px 0px 0px #4ecdc4;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  }
+  
+  .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+    stroke: #4ecdc4;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes scale {
+    0%, 100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+  
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 40px #4ecdc4;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="particles-container" id="particles"></div>
+<div class="grid"></div>
+
+<div class="container">
+
+  <!-- Splash Screen -->
+  <div class="splash" id="splash">
+    <h1>Welcome to CampusConnect</h1>
+    <div class="slogan"><span id="slogan"></span></div>
+    <button class="get-started-btn" id="getStartedBtn">Get Started</button>
+  </div>
+
+  <!-- Signup Form -->
+  <div class="form-container" id="signupForm">
+    <h2>Create Your Account</h2>
+    
+    <div class="form-group">
+      <input type="text" id="firstName" required>
+      <label class="floating-label" for="firstName">First Name</label>
+    </div>
+    
+    <div class="form-group">
+      <input type="text" id="surname" required>
+      <label class="floating-label" for="surname">Surname</label>
+    </div>
+    
+    <div class="form-group">
+      <input type="email" id="email" required>
+      <label class="floating-label" for="email">Email</label>
+    </div>
+    
+    <button id="signupBtn">Sign Up</button>
+  </div>
+
+  <!-- Success Animation -->
+  <div class="success-animation" id="successAnimation">
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+      <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+      <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+    </svg>
+    <h2 style="color: #4ecdc4; margin-bottom: 1rem;">Account Created Successfully!</h2>
+    <p style="margin-bottom: 2rem;">Redirecting you to the about page...</p>
+  </div>
+
+</div>
+
+<script>
+  const splash = document.getElementById('splash');
+  const signupForm = document.getElementById('signupForm');
+  const signupBtn = document.getElementById('signupBtn');
+  const getStartedBtn = document.getElementById('getStartedBtn');
+  const successAnimation = document.getElementById('successAnimation');
+  const particlesContainer = document.getElementById('particles');
+
+  // Create floating particles
+  function createParticles() {
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      // Random size between 2px and 8px
+      const size = Math.random() * 6 + 2;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      // Random position
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      
+      // Random animation delay and duration
+      const delay = Math.random() * 15;
+      const duration = Math.random() * 10 + 15;
+      particle.style.animationDelay = `${delay}s`;
+      particle.style.animationDuration = `${duration}s`;
+      
+      particlesContainer.appendChild(particle);
+    }
+  }
+
+  // Typing slogan
+  const sloganText = "Your hub for study resources, collaboration, and student life.";
+  const sloganElement = document.getElementById('slogan');
+  let i = 0;
+  const typingSpeed = 35;
+
+  function typeSlogan() {
+    if(i < sloganText.length){
+      sloganElement.innerHTML += sloganText.charAt(i);
+      i++;
+      setTimeout(typeSlogan, typingSpeed);
+    } else {
+      // Remove the typing cursor after typing is complete
+      setTimeout(() => {
+        sloganElement.style.borderRight = 'none';
+      }, 500);
+    }
+  }
+
+  // Get Started button - go directly to services
+  getStartedBtn.addEventListener('click', ()=>{
+    window.location.href = "services.html";
+  });
+
+  
+  // Auto transition from splash to signup form after 3.5s
+  setTimeout(()=>{
+    splash.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    splash.style.opacity = "0";
+    splash.style.transform = "translateY(-20px)";
+    setTimeout(()=>{
+      splash.style.display='none';
+      signupForm.style.display='flex';
+      setTimeout(() => {
+        signupForm.classList.add('active');
+      }, 50);
+    }, 600);
+  },3500);
+
+  // Signup button click
+  signupBtn.addEventListener('click', ()=>{
+    const firstName = document.getElementById('firstName').value.trim();
+    const surname = document.getElementById('surname').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if(firstName && surname && email){
+      // Show success animation
+      signupForm.classList.remove('active');
+      setTimeout(() => {
+        signupForm.style.display = 'none';
+        successAnimation.style.display = 'flex';
+        setTimeout(() => {
+          successAnimation.classList.add('active');
+        }, 50);
+      }, 500);
+      
+      // Redirect after animation
+      setTimeout(() => {
+        window.location.href = "about.html";
+      }, 3000);
+    } else {
+      // Shake animation for empty fields
+      const inputs = document.querySelectorAll('input');
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          input.style.animation = 'shake 0.5s';
+          setTimeout(() => {
+            input.style.animation = '';
+          }, 500);
+        }
+      });
+    }
+  });
+
+  // Initialize particles and typing animation
+  createParticles();
+  typeSlogan();
+</script>
+
+</body>
+</html>
