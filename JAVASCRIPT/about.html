@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Connect — About</title>
+  <meta name="description" content="Learn about Campus Connect's history, mission, vision, and the team behind the platform." />
+
+  <!-- Open Graph (handy when sharing) -->
+  <meta property="og:title" content="Campus Connect — About" />
+  <meta property="og:description" content="Connecting students with resources, study groups, and opportunities." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Human-touched theming */
+    :root{--blue:#1e3a8a;--blue-600:#2563eb;--green:#16a34a;--grey:#6b7280;--bg:#f3f4f6;--card:#fff;--ring:rgba(37,99,235,.15);--shadow:0 10px 22px rgba(0,0,0,.08)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#0f172a;line-height:1.6}
+    a{color:var(--blue-600);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    header{background:#fff;border-bottom:1px solid #eef2f7;position:sticky;top:0;z-index:60}
+    .nav{max-width:1100px;margin:auto;padding:.85rem 1rem;display:flex;justify-content:space-between;align-items:center}
+    .brand{display:flex;gap:.6rem;align-items:center;font-weight:800;color:var(--blue)}
+    .mark{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),#0ea5e9);color:#fff}
+    nav ul{display:flex;gap:1.05rem;list-style:none}
+    nav a{font-weight:600;color:#0f172a}
+    #menuBtn{display:none}
+
+    main{max-width:1100px;margin:auto;padding:2.4rem 1.1rem}
+    .hero{background:linear-gradient(135deg,var(--blue),#0b3a2a);border-radius:14px;padding:2.6rem;color:#fff;display:grid;grid-template-columns:1fr 420px;gap:1.6rem;align-items:center}
+    .chip{display:inline-flex;align-items:center;background:rgba(255,255,255,.08);padding:.3rem .6rem;border-radius:999px;font-size:.85rem;border:1px solid rgba(255,255,255,.12)}
+    .hero h1{font-size:clamp(1.8rem,2.4vw + 1rem,2.8rem);margin:.6rem 0}
+    .hero p{color:rgba(255,255,255,.9);margin-bottom:.9rem}
+    .cta{background:#fff;color:var(--blue);padding:.7rem 1rem;border-radius:999px;font-weight:700;display:inline-block}
+
+    section{margin-top:2.2rem}
+    .section-title{font-size:1.4rem;margin-bottom:.6rem}
+    .lead{color:var(--grey);margin-bottom:1rem}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:var(--shadow);border:1px solid #eef2f7}
+
+    .timeline{margin-top:1rem;padding-left:1.1rem;position:relative}
+    .timeline::before{content:"";position:absolute;left:.45rem;top:0;bottom:0;width:2px;background:linear-gradient(var(--green),#22c55e)}
+    .tl-item{position:relative;margin:1.1rem 0;padding-left:1rem}
+    .tl-item::before{content:"";position:absolute;left:-.1rem;top:.35rem;width:.7rem;height:.7rem;border-radius:999px;background:var(--green);box-shadow:0 0 0 4px rgba(22,163,74,.12)}
+
+    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1rem}
+    .member{background:var(--card);border-radius:12px;padding:.9rem;box-shadow:var(--shadow);border:1px solid #eef2f7}
+    .member img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    .role{color:var(--grey);font-size:.94rem}
+    .socials{display:flex;gap:.5rem;margin-top:.6rem}
+    .socials a{width:34px;height:34px;border-radius:8px;display:inline-grid;place-items:center;background:#f8fafc;border:1px solid #eef2f7}
+
+    footer{background:#0b1220;color:#cbd5e1;padding:1.6rem 0;margin-top:2rem}
+    .foot{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 1rem}
+
+    /* small responsive tweaks */
+    @media(max-width:980px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.team-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){nav ul{display:none}#menuBtn{display:inline-block}.team-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Campus Connect home"><div class="mark">CC</div><span>Campus Connect</span></a>
+      <nav aria-label="Primary navigation">
+        <button id="menuBtn" aria-controls="mainNav" aria-expanded="false">Menu</button>
+        <ul id="mainNav">
+          <li><a href="#history">History</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <span class="chip">🔵 Blue • 🟩 Green • ⚪ Grey</span>
+        <h1>Connecting Students, Resources & Opportunities</h1>
+        <p>Campus Connect is a student-first non-profit that helps learners share notes, form study groups and access campus opportunities — thoughtfully designed and locally run.</p>
+        <a class="cta" href="#mission">Our mission</a>
+      </div>
+      <div class="hero-illus" aria-hidden="true">
+        <!-- simple illustration placeholder -->
+        <svg width="240" height="160" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="0" width="240" height="160" rx="12" fill="url(#g)" />
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#e6f5ff" />
+              <stop offset="1" stop-color="#f0fff4" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </section>
+
+    <section class="container" id="history">
+      <p class="lead">About the organisation</p>
+      <h2 class="section-title">Our journey so far</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Where we started</h3>
+          <p class="muted">A student project that grew into a campus-wide community platform.</p>
+        </div>
+        <div class="card">
+          <h3>What we do</h3>
+          <p class="muted">Share resources, run study groups, host practice quizzes and support campus events.</p>
+        </div>
+        <div class="card">
+          <h3>Who we serve</h3>
+          <p class="muted">Students across universities and colleges, especially those with limited access to paid resources.</p>
+        </div>
+      </div>
+
+      <div class="timeline" aria-hidden="false">
+        <div class="tl-item"><div class="badge">2019</div> Campus pilot launched at two universities.</div>
+        <div class="tl-item"><div class="badge">2021</div> Grew to 5 campuses with local ambassadors.</div>
+        <div class="tl-item"><div class="badge">2024</div> Platform reworked and nonprofit established.</div>
+      </div>
+    </section>
+
+    <section class="container" id="mission">
+      <h2 class="section-title">Mission & Vision</h2>
+      <p class="lead">We want accessible learning for every student — practical tools, local support, and a culture of sharing knowledge.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+        <div class="card"><h3>Mission</h3><p class="muted">Empower students with low-friction tools and community-led learning.</p></div>
+        <div class="card"><h3>Vision</h3><p class="muted">A future where quality learning resources are freely available across campuses.</p></div>
+      </div>
+    </section>
+
+    <section class="container" id="team">
+      <p class="lead">Meet the people who keep Campus Connect running</p>
+      <h2 class="section-title">Core team</h2>
+      <div class="team-grid">
+        <div class="member">
+          <img src="https://i.pinimg.com/736x/f7/4a/7f/f74a7fd32d1b663f6a35bca1bf426abc.jpg"Anele — Founder" loading="lazy">
+          <h3>Anele Khumalo</h3>
+          <div class="role">Founder & Director</div>
+          <div class="socials"><a href="#" aria-label="Anele on Twitter">T</a><a href="#" aria-label="Anele on LinkedIn">in</a></div>
+        </div>
+        <div class="member">
+          <img src="https://media.licdn.com/dms/image/D4D03AQEnGQLjtWK8jQ/profile-displayphoto-shrink_800_800/0/1683155765619?e=2147483647&v=beta&t=Ltsjnu9FUMI74eAFnJTlRRhEJb7W4xZkzF0jXyJLcNM" alt="Sipho — Product" loading="lazy">
+          <h3>Sipho Dlamini</h3>
+          <div class="role">Product Lead</div>
+          <div class="socials"><a href="#">T</a><a href="#">in</a></div>
+        </div>
+        <div class="member">
+          <img src="https://www.proprop.co.za/motorAgentImages/600/1230468.jpg" alt="Lerato — Operations" loading="lazy">
+          <h3>Lerato Mokoena</h3>
+          <div class="role">Operations & Community</div>
+          <div class="socials"><a href="#">T</a><a href="#">in</a></div>
+        </div>
+        <div class="member">
+          <img src="https://www.cunninghambounds.com/images/staff/Tyler-J.-Flowers.jpg" alt="Thabo — Tech" loading="lazy">
+          <h3>Thabo Nkosi</h3>
+          <div class="role">Lead Developer</div>
+          <div class="socials"><a href="#">T</a><a href="#">in</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <h2 class="section-title">Get involved</h2>
+      <p class="lead">Partner with us, join as an ambassador, or support our mission.</p>
+      <div class="card"><p><strong>Email:</strong> <a href="mailto:hello@campusconnect.org">hello@campusconnect.org</a></p></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="foot container">
+      <div class="brand"><div class="mark">CC</div><span style="color:#fff">Campus Connect</span></div>
+      <small style="color:#94a3b8">© <span id="year"></span> Campus Connect • Built for students, by students.</small>
+    </div>
+  </footer>
+
+  <script>
+    // small UX niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if(menuBtn){
+      menuBtn.addEventListener('click', ()=>{
+        const open = mainNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // scroll reveal for cards and members
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); obs.unobserve(entry.target); }
+      });
+    },{threshold:.2});
+
+    document.querySelectorAll('.card, .member').forEach(el=>obs.observe(el));
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        const id = a.getAttribute('href'); const el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+<

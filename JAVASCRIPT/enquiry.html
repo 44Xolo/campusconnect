@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Connect — Enquiry</title>
+  <meta name="description" content="Service, volunteer, and sponsor enquiries for Campus Connect." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Open Graph (nice when you share the link) -->
+  <meta property="og:title" content="Campus Connect — Enquiry" />
+  <meta property="og:description" content="Get in touch about services, volunteering or sponsorship." />
+
+  <style>
+    /*
+      Notes for future-me:
+      - Keep styles minimal here; heavier UI lives on app.
+      - Avoid super-perfect numbers so it feels human and flexible.
+    */
+    :root{
+      --blue:#1e3a8a;
+      --blue-600:#2563eb;
+      --green:#16a34a;
+      --grey:#6b7280;
+      --bg:#f3f4f6;
+      --card:#ffffff;
+      --shadow:0 10px 24px rgba(0,0,0,.08), 0 2px 7px rgba(0,0,0,.06);
+      --ring: 0 0 0 3px rgba(37,99,235,.15);
+      --danger:#b91c1c;
+    }
+    html, body { margin:0; padding:0; }
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:#0f172a; line-height:1.6}
+
+    /* Header / Nav */
+    header{background:#fff; border-bottom:1px solid #e5e7eb; position:sticky; top:0; z-index:10}
+    .nav{max-width:1100px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:.95rem 1rem}
+    .brand{display:flex; align-items:center; gap:.55rem; font-weight:800; letter-spacing:.2px}
+    .brand .mark{width:36px; height:36px; display:grid; place-items:center; background:linear-gradient(135deg,var(--blue),#0ea5e9); color:#fff; border-radius:10px}
+    nav ul{display:flex; gap:1.15rem; list-style:none; margin:0; padding:0}
+    nav a{color:#0f172a; font-weight:650; text-decoration:none}
+    nav a:hover{color:var(--blue-600)}
+    /* Mobile menu */
+    #menuBtn{display:none; border:1px solid #e5e7eb; background:#fff; padding:.5rem .7rem; border-radius:10px; font-weight:700}
+
+    /* Layout */
+    main{max-width:720px; margin:auto; padding:2.8rem 1.1rem}
+    h1{text-align:center; font-size:2.15rem; margin:0 0 1.6rem; color:var(--blue)}
+    .lead{max-width:58ch; margin:.6rem auto 2rem; text-align:center; color:var(--grey)}
+
+    /* Card/Form */
+    .card{background:var(--card); padding:1.8rem; border-radius:16px; box-shadow:var(--shadow); border:1px solid #e5e7eb}
+    label{display:block; font-weight:650; margin-top:1rem; margin-bottom:.35rem}
+    .hint{display:block; font-size:.9rem; color:var(--grey); margin-top:.25rem}
+    input, select, textarea{width:100%; padding:.78rem .85rem; border:1px solid #d1d5db; border-radius:10px; font-size:1rem; transition:box-shadow .15s ease, border-color .15s ease}
+    input:focus, select:focus, textarea:focus{outline:none; border-color:var(--blue-600); box-shadow:var(--ring)}
+    textarea{resize:vertical; min-height:120px}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:.8rem}
+    .actions{display:flex; gap:.6rem; align-items:center; margin-top:1.2rem}
+    button[type="submit"]{padding:1rem 1.35rem; font-size:1rem; background:var(--green); color:#fff; border:none; border-radius:12px; cursor:pointer; font-weight:700}
+    button[type="submit"]:hover{background:#15803d}
+    .ghost{background:#fff; color:#0f172a; border:1px solid #e5e7eb}
+
+    /* Status + errors */
+    .status{display:none; margin:1rem 0 0; padding:.8rem; border-radius:10px; background:#ecfdf5; border:1px solid #86efac}
+    .error{color:var(--danger); font-size:.92rem; margin-top:.35rem}
+    .hidden{display:none !important}
+
+    /* Footer */
+    footer{color:#94a3b8; text-align:center; padding:1.8rem 1rem}
+
+    /* Responsive tweaks */
+    @media (max-width: 720px){
+      .row{grid-template-columns:1fr}
+      #menuBtn{display:inline-block}
+      nav ul{display:none; position:absolute; right:1rem; top:58px; background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:.6rem; box-shadow:var(--shadow);}
+      nav ul.open{display:flex; flex-direction:column; min-width:200px}
+      nav li a{padding:.4rem .5rem; display:block}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <a href="index.html" class="brand" aria-label="Campus Connect home">
+        <div class="mark" aria-hidden="true">CC</div>
+        <span>Campus Connect</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <button id="menuBtn" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+        <ul id="primary-nav">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Service & Participation Enquiry</h1>
+    <p class="lead">Tell us what you need or how you’d like to get involved. We’ll get back to you within 2–3 working days.</p>
+
+    <form id="enquiryForm" class="card" method="post" action="#" novalidate>
+      <!-- simple spam trap; leave empty -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+      <div class="row">
+        <div>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" placeholder="Lerato Mokoena">
+          <small class="error hidden" id="err-name">Please enter your full name.</small>
+        </div>
+        <div>
+          <label for="phone">Phone Number <span class="hint">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="071 234 5678">
+        </div>
+      </div>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" placeholder="you@university.ac.za">
+      <small class="error hidden" id="err-email">Enter a valid email so we can reply.</small>
+
+      <label for="interest">I am interested in</label>
+      <select id="interest" name="interest" required aria-required="true">
+        <option value="">— Select an option —</option>
+        <option value="services">Learning more about Campus Connect services</option>
+        <option value="volunteer">Becoming a volunteer</option>
+        <option value="sponsor">Becoming a sponsor</option>
+      </select>
+      <small class="error hidden" id="err-interest">Please pick one option.</small>
+
+      <!-- Conditional blocks (show based on select) -->
+      <div id="volunteerBlock" class="hidden">
+        <label for="vol-role">Volunteer focus</label>
+        <select id="vol-role" name="vol_role">
+          <option value="">— Where would you like to help? —</option>
+          <option value="tutoring">Tutoring & study groups</option>
+          <option value="content">Content curation & moderation</option>
+          <option value="outreach">Campus outreach & events</option>
+          <option value="tech">Tech support (frontend/backend)</option>
+        </select>
+      </div>
+
+      <div id="sponsorBlock" class="hidden">
+        <div class="row">
+          <div>
+            <label for="org">Organisation</label>
+            <input type="text" id="org" name="org" placeholder="Acme Foundation">
+          </div>
+          <div>
+            <label for="budget">Budget range</label>
+            <select id="budget" name="budget">
+              <option value="">— Select a range —</option>
+              <option value="<10k">Under R10 000</option>
+              <option value="10-50k">R10 000 – R50 000</option>
+              <option value=">50k">Above R50 000</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Tell us a bit more so we can route your enquiry…"></textarea>
+
+      <label style="display:flex; gap:.6rem; align-items:center; margin-top:1rem">
+        <input type="checkbox" id="consent" name="consent" required aria-required="true" />
+        <span>I agree to be contacted about my enquiry.</span>
+      </label>
+      <small class="error hidden" id="err-consent">Please consent so we can reply.</small>
+
+      <div class="actions">
+        <button type="submit">Submit Enquiry</button>
+        <button class="ghost" type="reset">Reset</button>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite">Thanks! Your enquiry has been received. We’ll be in touch soon.</div>
+    </form>
+
+    <footer>
+      <small>© <span id="year"></span> Campus Connect • Built for students, by students.</small>
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle (simple, no frameworks)
+    const menuBtn = document.getElementById('menuBtn');
+    const navList = document.getElementById('primary-nav');
+    if (menuBtn && navList) {
+      menuBtn.addEventListener('click', () => {
+        const open = navList.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    // Form logic: tiny client-side validation + conditional fields
+    const form = document.getElementById('enquiryForm');
+    const interest = document.getElementById('interest');
+    const volunteerBlock = document.getElementById('volunteerBlock');
+    const sponsorBlock = document.getElementById('sponsorBlock');
+
+    interest.addEventListener('change', () => {
+      const val = interest.value;
+      volunteerBlock.classList.toggle('hidden', val !== 'volunteer');
+      sponsorBlock.classList.toggle('hidden', val !== 'sponsor');
+    });
+
+    // quick helpers
+    const show = (el) => el.classList.remove('hidden');
+    const hide = (el) => el.classList.add('hidden');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Honeypot (bots fill hidden fields)
+      const botField = form.querySelector('input[name="website"]').value.trim();
+      if (botField) return; // silently drop
+
+      // Basic validation (friendly, not fussy)
+      let ok = true;
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const consent = document.getElementById('consent');
+
+      const errName = document.getElementById('err-name');
+      const errEmail = document.getElementById('err-email');
+      const errInterest = document.getElementById('err-interest');
+      const errConsent = document.getElementById('err-consent');
+
+      // Reset errors
+      [errName, errEmail, errInterest, errConsent].forEach(hide);
+
+      if (!name.value.trim()) { show(errName); ok = false; }
+      if (!email.value.includes('@')) { show(errEmail); ok = false; }
+      if (!interest.value) { show(errInterest); ok = false; }
+      if (!consent.checked) { show(errConsent); ok = false; }
+
+      if (!ok) return;
+
+      // Pretend submit (swap with fetch to your endpoint later)
+      const status = document.getElementById('status');
+      status.textContent = 'Thanks! Your enquiry has been received. We\'ll be in touch soon.';
+      status.style.display = 'block';
+      form.reset();
+      volunteerBlock.classList.add('hidden');
+      sponsorBlock.classList.add('hidden');
+      // Scroll to status for visibility on mobile
+      status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Connect | Services</title>
+  <meta name="description" content="Campus Connect offerings: resources, study groups, quizzes, forums, mentorship, events, and dashboards." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #2563eb;
+      --accent: #16a34a;
+      --bg: #f9fafb;
+      --card: #fff;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.05);
+      --muted: #6b7280;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:#0f172a;line-height:1.6;scroll-behavior:smooth;}
+
+    header{position:sticky;top:0;z-index:50;background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+    .nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:1rem;}
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:800;color:var(--primary);}
+    .brand .mark{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border-radius:12px;font-weight:bold;}
+    nav ul{display:flex;gap:1.2rem;list-style:none;}
+    nav a{color:#0f172a;font-weight:600;text-decoration:none;transition:color .3s;}
+    nav a:hover{color:var(--secondary);}
+    .cta-small{background:var(--secondary);color:#fff;padding:.5rem 1rem;border-radius:999px;font-weight:700;box-shadow:var(--shadow);}
+
+    main{max-width:1200px;margin:auto;padding:3rem 1.5rem;}
+    h1,h2,h3{margin-bottom:1rem;}
+    h1{color:var(--primary);text-align:center;font-size:2.5rem;animation:fadeInDown 1s;}
+    h2{color:var(--secondary);}
+    .muted{color:var(--muted);}
+
+    /* Hero Section */
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;background:linear-gradient(135deg,var(--primary),#0b3a2a);padding:4rem;border-radius:18px;position:relative;overflow:hidden;color:#fff;margin-bottom:2rem;}
+    .hero::after{content:"";position:absolute;inset:-20% -10%;height:280px;width:280px;border-radius:999px;background:radial-gradient(circle, rgba(22,163,74,.25), transparent 70%);filter:blur(8px);z-index:-1;}
+    .hero img{width:100%;border-radius:18px;object-fit:cover;}
+
+    /* Overview Cards */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0;animation:fadeInUp 1.2s;}
+    .card{background:var(--card);padding:1.5rem;border-radius:16px;box-shadow:var(--shadow);transition:transform .3s;}
+    .card:hover{transform:translateY(-5px);}
+    .card h3{margin-bottom:.5rem;}
+
+    /* Detailed Services */
+    .detail{display:grid;grid-template-columns:1fr 1.2fr;gap:1.5rem;align-items:start;margin:2rem 0;animation:fadeInUp 1.2s;}
+    .panel{background:var(--card);padding:1rem;border-radius:16px;box-shadow:var(--shadow);}
+    .badge{display:inline-block;background:#d1fae5;color:#065f46;font-weight:700;font-size:.8rem;padding:.3rem .5rem;border-radius:6px;margin-bottom:.5rem;}
+
+    details{background:var(--card);padding:.8rem 1rem;border-radius:12px;border:1px solid #e5e7eb;margin-top:.8rem;}
+    summary{font-weight:700;cursor:pointer;}
+
+    footer{background:#0b1220;color:#cbd5e1;padding:2rem 0;margin-top:3rem;text-align:center;}
+    .foot .brand span{color:#fff;}
+
+    @keyframes fadeInUp{0%{opacity:0;transform:translateY(40px);}100%{opacity:1;transform:translateY(0);}}
+    @keyframes fadeInDown{0%{opacity:0;transform:translateY(-40px);}100%{opacity:1;transform:translateY(0);}}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr;}}
+    @media(max-width:600px){.cards{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand"><div class="mark">CC</div>Campus Connect</a>
+    <nav>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="contact.html" class="cta-small">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div>
+      <h1>Campus Connect Services</h1>
+      <p class="muted">A full suite of resources and tools to help students study smarter, connect faster, and achieve more.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1600&auto=format&fit=crop" alt="Students collaborating on campus" />
+  </section>
+
+  <!-- OVERVIEW CARDS -->
+  <section id="overview">
+    <h2>Quick Overview</h2>
+    <div class="cards">
+      <div class="card"><h3>📚 Resource Library</h3><p>Organized notes, slides, past papers accessible anytime.</p></div>
+      <div class="card"><h3>👥 Study Groups</h3><p>Join or create groups to collaborate and share tasks.</p></div>
+      <div class="card"><h3>🧠 Quizzes & Flashcards</h3><p>Practice questions, spaced-repetition flashcards, and progress tracking.</p></div>
+    </div>
+  </section>
+
+  <!-- DETAILED SERVICES -->
+  <section id="services">
+    <h2>Detailed Services</h2>
+
+    <div class="detail">
+      <div><span class="badge">Core</span><h3>Resource Library</h3><p class="muted">Curated materials organized for quick access.</p></div>
+      <div class="panel"><ul><li>Notes, slides, and past papers</li><li>Searchable by course & topic</li><li>Download & bookmark resources</li></ul></div>
+    </div>
+
+    <div class="detail">
+      <div><span class="badge">Core</span><h3>Study Groups</h3><p class="muted">Collaborative learning groups with schedules and tasks.</p></div>
+      <div class="panel"><ul><li>Find groups by course/topic</li><li>Planner & reminders for sessions</li><li>Task lists & milestones</li></ul></div>
+    </div>
+
+    <div class="detail">
+      <div><span class="badge">Learning Tools</span><h3>Quizzes & Flashcards</h3><p class="muted">Adaptive practice to reinforce learning.</p></div>
+      <div class="panel"><ul><li>Practice sets aligned to courses</li><li>Spaced repetition flashcards</li><li>Progress analytics & streak tracking</li></ul></div>
+    </div>
+
+    <div class="detail">
+      <div><span class="badge">Community</span><h3>Forums & Mentorship</h3><p class="muted">Peer-to-peer Q&A and mentor support.</p></div>
+      <div class="panel"><ul><li>Discussion forums</li><li>Mentor 1-on-1 sessions</li><li>Safe, moderated environment</li></ul></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <h2>Pricing & Access</h2>
+    <div class="cards">
+      <div class="card"><h3>Free Tier</h3><ul><li>Resource Library</li><li>Public Study Groups</li><li>Core Quizzes</li></ul></div>
+      <div class="card"><h3>Campus Partners</h3><ul><li>Institution-wide access</li><li>Analytics & mentorship tools</li><li>Event integrations</li></ul></div>
+    </div>
+    <p class="muted">Most features are free. Partner packages help support the platform.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>FAQ</h2>
+    <details>
+      <summary>How do I join a study group?</summary>
+      <p>Browse groups by course or topic in the Study Groups section. Request to join or create your own!</p>
