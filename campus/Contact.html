@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Campus Connect • Get in Touch With Our Team</title>
+  <meta name="description" content="Contact Campus Connect for enquiries, support, partnerships, or volunteering opportunities. We're here to help you succeed." />
+  <meta name="keywords" content="contact campus connect, student support, partnerships, campus enquiries">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Contact Campus Connect • We're Here to Help">
+  <meta property="og:description" content="Reach out to our team for support, partnerships, or general enquiries.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' style='stop-color:%231e3a8a'/%3E%3Cstop offset='1' style='stop-color:%232563eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='65' font-size='40' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3ECC%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue:#1e3a8a;
+      --secondary:#2563eb;
+      --green:#16a34a;
+      --yellow:#ffdd59;
+      --cyan:#4ecdc4;
+      --bg:#0b0f1a;
+      --text:#e0e7ff;
+      --muted:#94a3b8;
+      --card:#111827;
+      --shadow:0 10px 30px rgba(0,0,0,.5);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Open Sans',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6; 
+      overflow-x: hidden;
+    }
+
+    /* Enhanced Background with Particles */
+    .particles-container {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      background: radial-gradient(ellipse at top, #1e3a8a 0%, #0b0f1a 100%);
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(78, 205, 196, 0.15);
+      animation: float 20s infinite linear;
+      box-shadow: 0 0 10px rgba(78, 205, 196, 0.2);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-1000%) translateX(100%) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Animated Grid */
+    .grid-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(90deg, rgba(78, 205, 196, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(78, 205, 196, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveGrid 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveGrid {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 50px 50px, 50px 50px; }
+    }
+
+    /* HEADER / NAV */
+    header{
+      background:rgba(0,0,0,.8); 
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(78, 205, 196, 0.1); 
+      position:sticky; 
+      top:0; 
+      z-index:60;
+      animation: slideDown 0.6s ease-out;
+    }
+    
+    @keyframes slideDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:1rem 1.5rem;
+    }
+    
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      font-weight:900;
+      color:var(--yellow);
+      font-family:'Poppins',sans-serif;
+      transition: transform 0.3s ease;
+      font-size: 1.3rem;
+    }
+    
+    .brand:hover {
+      transform: translateY(-2px);
+    }
+    
+    .logo-svg {
+      width: 45px;
+      height: 45px;
+      filter: drop-shadow(0 0 10px rgba(78, 205, 196, 0.4));
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    
+    .brand:hover .logo-svg {
+      transform: rotate(10deg) scale(1.05);
+      filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.6));
+    }
+
+    nav ul{display:flex;gap:1.5rem;list-style:none}
+    nav a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:600;
+      font-family:'Poppins',sans-serif;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--cyan);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover{color:var(--cyan)}
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    nav a[aria-current="page"]{color:var(--yellow)}
+    nav a[aria-current="page"]::after {
+      width: 100%;
+      background: var(--yellow);
+    }
+    
+    #menuBtn{
+      display:none;
+      border:1px solid rgba(78, 205, 196, 0.3);
+      background:rgba(78, 205, 196, 0.1);
+      padding:.5rem 1rem;
+      border-radius:8px;
+      transition: all 0.3s ease;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    
+    #menuBtn:hover {
+      background: rgba(78, 205, 196, 0.2);
+      border-color: var(--cyan);
+    }
+
+    /* MAIN */
+    main{
+      max-width:1200px;
+      margin:auto;
+      padding:2.5rem 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards 0.2s;
+    }
+    
+    h1{
+      text-align:center;
+      color:#fff;
+      font-size:clamp(2rem, 5vw, 3rem);
+      margin-bottom:1rem;
+      font-family:'Poppins',sans-serif;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--cyan);
+    }
+    
+    .sub{
+      max-width:70ch;
+      margin:1.5rem auto 2.5rem;
+      text-align:center;
+      color:var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    
+    .sub a{
+      color:var(--yellow);
+      font-weight:600;
+      text-decoration:none;
+      position: relative;
+      transition: color 0.3s ease;
+      border-bottom: 2px solid var(--yellow);
+    }
+    
+    .sub a:hover{
+      color: var(--cyan);
+      border-color: var(--cyan);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:2rem;
+      margin-top: 2rem;
+    }
+    
+    .left{
+      grid-column:span 5;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideInLeft 0.8s ease forwards 0.4s;
+    }
+    
+    .right{
+      grid-column:span 7;
+      opacity: 0;
+      transform: translateX(20px);
+      animation: slideInRight 0.8s ease forwards 0.4s;
+    }
+
+    @keyframes slideInLeft {
+      0% { opacity: 0; transform: translateX(-20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInRight {
+      0% { opacity: 0; transform: translateX(20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .card{
+      background:var(--card);
+      padding:2rem;
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(78, 205, 196, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(78,205,196,0.3);
+      border-color: rgba(78, 205, 196, 0.3);
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .card h2{
+      color:var(--cyan);
+      margin-bottom:1rem;
+      font-family:'Poppins',sans-serif;
+      font-size: 1.5rem;
+    }
+    
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      padding: 0.7rem 0;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .contact-list li::before {
+      content: '→';
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    .contact-list a {
+      color: var(--yellow);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .contact-list a:hover {
+      color: var(--cyan);
+    }
+    
+    .muted{
+      color:var(--muted);
+      line-height: 1.7;
+    }
+
+    .office-section {
+      margin-top: 1.5rem;
+    }
+
+    .office-section h3 {
+      color: #fff;
+      margin-bottom: 0.8rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .office-item {
+      background: rgba(78, 205, 196, 0.05);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(78, 205, 196, 0.1);
+    }
+
+    /* Locations grid */
+    .locations { 
+      display:grid; 
+      grid-template-columns:1fr 1fr; 
+      gap:1.5rem; 
+      margin-top: 1.5rem;
+    }
+    
+    .loc { 
+      background: var(--card); 
+      border-radius:16px; 
+      padding:1.5rem; 
+      border:1px solid rgba(78, 205, 196, 0.1); 
+      box-shadow:var(--shadow);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      opacity: 0;
+      transform: translateY(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loc::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--yellow), var(--cyan));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+    
+    .loc.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .loc:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(78,205,196,0.3);
+      border-color: rgba(78, 205, 196, 0.3);
+    }
+
+    .loc:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .loc h4 { 
+      margin:0 0 .8rem; 
+      color:var(--cyan); 
+      font-family:'Poppins',sans-serif;
+      font-size: 1.2rem;
+    }
+    
+    .loc p { 
+      margin:.4rem 0; 
+      color:var(--muted); 
+      font-size:0.95rem; 
+      line-height: 1.6;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(22, 163, 74, 0.1));
+      border-radius: 12px;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      font-weight: 600;
+      border: 1px solid rgba(78, 205, 196, 0.2);
+    }
+
+    /* Form Styles */
+    label{
+      display:block;
+      font-weight:600;
+      margin-top:1.2rem;
+      margin-bottom:.5rem;
+      font-family:'Poppins',sans-serif;
+      color: #fff;
+    }
+    
+    input, textarea, select{
+      width:100%;
+      padding:.9rem 1rem;
+      border:2px solid rgba(78, 205, 196, 0.2);
+      border-radius:12px;
+      font-size:1rem;
+      font-family:'Open Sans',sans-serif;
+      transition:all .3s;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--muted);
+    }
+    
+    input:focus, textarea:focus, select:focus{
+      outline:none;
+      border-color:var(--cyan);
+      box-shadow:0 0 0 3px rgba(78,205,196,.15), 0 0 20px rgba(78,205,196,0.2);
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+    }
+    
+    .actions{
+      display:flex;
+      gap:.8rem;
+      align-items:center;
+      margin-top:1.8rem;
+    }
+
+    button{
+      background:linear-gradient(135deg, var(--cyan), var(--green));
+      color:#fff;
+      padding:1rem 2rem;
+      border-radius:999px;
+      border:none;
+      font-weight:700;
+      cursor:pointer;
+      font-family:'Poppins',sans-serif;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(78,205,196,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+    
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.6s;
+    }
+    
+    button:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(78,205,196,.5);
+    }
+    
+    button:hover::before {
+      left: 100%;
+    }
+    
+    button.ghost{
+      background:transparent;
+      border:2px solid rgba(78, 205, 196, 0.3);
+      color:var(--cyan);
+    }
+    
+    button.ghost:hover {
+      border-color: var(--cyan);
+      background: rgba(78, 205, 196, 0.1);
+    }
+
+    .status{
+      display:none;
+      padding:1rem;
+      border-radius:12px;
+      margin-top:1.2rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.5s ease;
+    }
+    
+    .status.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .status.ok{
+      background:rgba(22, 163, 74, 0.1);
+      border:2px solid var(--green);
+      color:var(--green);
+    }
+    
+    .status.err{
+      background:rgba(239, 68, 68, 0.1);
+      border:2px solid #ef4444;
+      color:#ef4444;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      padding:2rem 1rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards 1s;
+      background: #0b1220;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(78, 205, 196, 0.1);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .left,.right{grid-column:auto}
+      .row{grid-template-columns:1fr}
+      .locations{grid-template-columns:1fr}
+    }
+    
+    @media (max-width:640px){
+      #menuBtn{display:inline-block}
+      nav ul{
+        display:none;
+        position:absolute;
+        right:1rem;
+        top:70px;
+        background:rgba(0,0,0,0.95);
+        backdrop-filter: blur(20px);
+        padding:1rem;
+        border-radius:12px;
+        border:1px solid rgba(78, 205, 196, 0.2);
+        box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      }
+      
+      nav ul.open{
+        display:flex;
+        flex-direction:column;
+        min-width:180px;
+      }
+      
+      nav li a{padding:.5rem .6rem}
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Effects -->
+  <div class="particles-container" id="particles"></div>
+  <div class="grid-bg"></div>
+
+  <header>
+    <div class="nav">
+      <a href="Home page.html" class="brand">
+        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="45" fill="url(#navLogoGrad)" opacity="0.2"/>
+          <path d="M 30 35 L 30 70 L 50 65 L 50 30 Z" fill="url(#navLogoGrad)"/>
+          <path d="M 70 35 L 70 70 L 50 65 L 50 30 Z" fill="url(#navLogoGrad)" opacity="0.7"/>
+          <circle cx="35" cy="45" r="4" fill="#ffdd59"/>
+          <circle cx="50" cy="40" r="4" fill="#ffdd59"/>
+          <circle cx="65" cy="45" r="4" fill="#ffdd59"/>
+          <line x1="35" y1="45" x2="50" y2="40" stroke="#ffdd59" stroke-width="1.5"/>
+          <line x1="50" y1="40" x2="65" y2="45" stroke="#ffdd59" stroke-width="1.5"/>
+          <text x="50" y="62" font-size="22" font-weight="bold" fill="white" text-anchor="middle" font-family="Poppins">CC</text>
+        </svg>
+        <span>Campus Connect</span>
+      </a>
+      <nav>
+        <button id="menuBtn" aria-controls="mainNav" aria-expanded="false">Menu</button>
+        <ul id="mainNav">
+          <li><a href="Home page.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Service.html">Services</a></li>
+          <li><a href="Enquiry.html">Enquiry</a></li>
+          <li><a href="Contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Get in Touch</h1>
+    <p class="sub">
+      Have questions about our services, partnerships, or volunteering? 
+      We're here to help and will route your message to the right team. 
+      <a href="Service.html">Explore our Services</a> or reach out directly below.
+    </p>
+
+    <div class="grid">
+      <!-- LEFT -->
+      <div class="left">
+        <div class="card">
+          <h2>Contact Information</h2>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:info@campusconnect.org">info@campusconnect.org</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+27689830301">+27 68 983 0301</a></li>
+            <li><strong>Social:</strong> <a href="#">@CampusConnect</a></li>
+          </ul>
+
+          <div class="office-section">
+            <h3>Our Offices</h3>
+            
+            <div class="office-item">
+              <strong style="color: var(--cyan);">Johannesburg</strong><br/>
+              <span class="muted">
+                Mon–Fri, 09:00–17:00<br/>
+                1st Floor, Student Hub, Parktown<br/>
+                Johannesburg, 2193
+              </span>
+            </div>
+
+            <div class="office-item">
+              <strong style="color: var(--cyan);">Cape Town</strong><br/>
+              <span class="muted">
+                Mon–Fri, 09:00–17:00<br/>
+                Suite 4, Learning Centre, Gardens<br/>
+                Cape Town, 8001
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <div class="card">
+          <h2>Send Us a Message</h2>
+
+          <form id="contactForm" novalidate>
+            <input type="text" name="hp" style="display:none!important">
+
+            <div class="row">
+              <div>
+                <label for="name">Full Name *</label>
+                <input id="name" name="name" type="text" placeholder="Lerato Mokoena" required>
+                <small class="error" id="err-name" style="display:none;color:#ef4444;font-size:0.85rem;margin-top:0.3rem;display:block;">Please enter your name.</small>
+              </div>
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" placeholder="071 234 5678">
+              </div>
+            </div>
+
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" type="email" placeholder="you@university.ac.za" required>
+            <small class="error" id="err-email" style="display:none;color:#ef4444;font-size:0.85rem;margin-top:0.3rem;display:block;">Please provide a valid email.</small>
+
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="general">General Enquiry</option>
+              <option value="support">Support</option>
+              <option value="partnerships">Partnerships</option>
+              <option value="volunteer">Volunteer</option>
+            </select>
+
+            <label for="message">Your Message *</label>
+            <textarea id="message" name="message" placeholder="How can we help you today?" required></textarea>
+            <small class="error" id="err-message" style="display:none;color:#ef4444;font-size:0.85rem;margin-top:0.3rem;display:block;">Please tell us a bit more so we can help.</small>
+
+            <div class="actions">
+              <button type="submit">Send Message</button>
+              <button type="reset" class="ghost">Reset Form</button>
+            </div>
+
+            <div id="status" class="status" role="status"></div>
+          </form>
+        </div>
+
+        <!-- Office Locations -->
+        <div class="locations">
+          <div class="loc">
+            <h4>📍 Johannesburg Office</h4>
+            <p class="muted">
+              <strong>Student Hub, Parktown</strong><br/>
+              Corner of University Ave & Park Lane<br/>
+              Johannesburg, 2193
+            </p>
+            <div class="map-placeholder">🗺️ Map View</div>
+          </div>
+
+          <div class="loc">
+            <h4>📍 Cape Town Office</h4>
+            <p class="muted">
+              <strong>Learning Centre, Gardens</strong><br/>
+              42 Rose St, Gardens<br/>
+              Cape Town, 8001
+            </p>
+            <div class="map-placeholder">🗺️ Map View</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Campus Connect • Built for students, by students.</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 30;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        const size = Math.random() * 4 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+
+        const delay = Math.random() * 20;
+        particle.style.animationDelay = `${delay}s`;
+
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    createParticles();
+
+    // Menu toggle for mobile
+    const menuBtn = document.getElementById('menuBtn');
+    const navUl = document.getElementById('mainNav');
+
+    menuBtn.addEventListener('click', () => {
+      navUl.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', navUl.classList.contains('open'));
+    });
+
+    // Form validation and submission
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('status');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Hide previous status
+      statusDiv.classList.remove('show', 'ok', 'err');
+
+      // Get form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      // Simple validation
+      let valid = true;
+      const errors = {};
+
+      if (!data.name.trim()) {
+        valid = false;
+        errors.name = 'Please enter your name.';
+      }
+
+      if (!data.email.trim() || !/\S+@\S+\.\S+/.test(data.email)) {
+        valid = false;
+        errors.email = 'Please provide a valid email.';
+      }
+
+      if (!data.message.trim()) {
+        valid = false;
+        errors.message = 'Please tell us a bit more so we can help.';
+      }
+
+      // Show errors
+      document.querySelectorAll('.error').forEach(el => el.style.display = 'none');
+      for (const [field, msg] of Object.entries(errors)) {
+        const errEl = document.getElementById(`err-${field}`);
+        if (errEl) {
+          errEl.textContent = msg;
+          errEl.style.display = 'block';
+        }
+      }
+
+      if (valid) {
+        // Simulate form submission
+        statusDiv.textContent = 'Thank you for your message! We\'ll get back to you soon.';
+        statusDiv.classList.add('show', 'ok');
+        form.reset();
+      } else {
+        statusDiv.textContent = 'Please correct the errors above.';
+        statusDiv.classList.add('show', 'err');
+      }
+    });
+
+    // Intersection Observer for location cards animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.loc').forEach(loc => {
+      observer.observe(loc);
+    });
+  </script>

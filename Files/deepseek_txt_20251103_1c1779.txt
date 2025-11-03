@@ -1,0 +1,225 @@
+# Campus Connect - robots.txt
+# Student: Hlompho Muzi Xolo
+# Student Number: St10476575
+# Course: WEDE5020 - Web Development (Introduction)
+# Date: 23 September 2025
+
+User-agent: *
+Allow: /
+
+# Directories to allow crawling
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+Allow: /seo/
+
+# Directories to disallow crawling
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /includes/
+Disallow: /config/
+
+# Specific pages to disallow
+Disallow: /search-results.html
+Disallow: /user-profile.html
+Disallow: /dashboard-private.html
+Disallow: /test-pages/
+
+# Sitemap location
+Sitemap: https://campusconnect.ac.za/sitemap.xml
+Sitemap: https://www.campusconnect.ac.za/sitemap.xml
+
+# Crawl delay (requests per second)
+Crawl-delay: 1
+
+# Allow specific file types
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Disallow specific file types that shouldn't be indexed
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /*.ppt$
+Disallow: /*.pptx$
+
+# Allow parameters for specific functionality
+Allow: /?page=
+Allow: /?category=
+Allow: /?service=
+Allow: /?search=
+
+# Disallow unnecessary parameters
+Disallow: /*?session_id=
+Disallow: /*?user_id=
+Disallow: /*?token=
+Disallow: /*?password=
+Disallow: /*?debug=
+Disallow: /*?preview=
+
+# Specific search engine instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 5
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+Disallow: /admin/
+Disallow: /private/
+
+# Block AI training bots
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+# Block scraping bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MauiBot
+Disallow: /
+
+# Allow accessibility bots
+User-agent: a11ybot
+Allow: /
+Crawl-delay: 2
+
+# Host directive (primary domain)
+Host: https://campusconnect.ac.za
+
+# Clean-param directive to ignore specific URL parameters
+Clean-param: ref /
+Clean-param: source /
+Clean-param: utm_source&utm_medium&utm_campaign /
+Clean-param: fbclid /
+Clean-param: gclid /
+
+# Additional instructions for modern search engines
+# Allow rich results and structured data
+Allow: /*.jsonld
+Allow: /*.rdf
+Allow: /*.rss
+Allow: /*.xml
+
+# Mobile-specific instructions
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 1
+
+User-agent: iPhone
+Allow: /
+Crawl-delay: 1
+
+User-agent: Android
+Allow: /
+Crawl-delay: 1
+
+# Image search bots
+User-agent: Googlebot-Image
+Allow: /assets/img/
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: BingImageBot
+Allow: /assets/img/
+Disallow: /admin/
+Disallow: /private/
+
+# Video search bots (if applicable)
+User-agent: Googlebot-Video
+Allow: /assets/video/
+Disallow: /admin/
+Disallow: /private/
+
+# News search bots (if applicable)
+User-agent: Googlebot-News
+Allow: /news/
+Disallow: /admin/
+Disallow: /private/
+
+# Ads bots
+User-agent: Mediapartners-Google
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Special instructions for archive bots
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 5
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: archive.org_bot
+Allow: /
+Crawl-delay: 5
+Disallow: /admin/
+Disallow: /private/
+
+# Rate limiting for aggressive bots
+User-agent: *
+# Slower bots get slower access
+Crawl-delay: 2
+
+# Emergency block (if needed)
+# User-agent: BadBot
+# Disallow: /
+
+# End of robots.txt file

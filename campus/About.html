@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Campus Connect • Our Story, Mission & Team</title>
+<meta name="description" content="Learn about Campus Connect's journey, mission to empower students, and meet the dedicated team building the future of collaborative learning." />
+<meta name="keywords" content="about campus connect, student platform mission, education team, student collaboration history">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="About Campus Connect • Our Story & Mission">
+<meta property="og:description" content="Discover how Campus Connect is transforming student collaboration and academic success.">
+<meta property="og:type" content="website">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' style='stop-color:%231e3a8a'/%3E%3Cstop offset='1' style='stop-color:%232563eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='65' font-size='40' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3ECC%3C/text%3E%3C/svg%3E">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#1e3a8a; 
+  --blue-600:#2563eb; 
+  --green:#16a34a;
+  --grey:#6b7280; 
+  --yellow:#ffdd59;
+  --bg:#0b0f1a; 
+  --card:#111827; 
+  --shadow:0 10px 30px rgba(0,0,0,.6);
+  --text:#e0e7ff;
+  --cyan:#4ecdc4;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--bg); 
+  color:var(--text); 
+  line-height:1.6; 
+  font-family:'Open Sans',sans-serif;
+  overflow-x: hidden;
+}
+a{text-decoration:none; color:var(--blue-600);}
+a:hover{color:var(--yellow);}
+
+/* Enhanced Background with Particles */
+.particles-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at top, #1e3a8a 0%, #0b0f1a 100%);
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(78, 205, 196, 0.2);
+  animation: float 20s infinite linear;
+  box-shadow: 0 0 10px rgba(78, 205, 196, 0.2);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-1000%) translateX(100%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Animated Grid */
+.grid-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(78, 205, 196, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(78, 205, 196, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveGrid 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveGrid {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 50px 50px, 50px 50px; }
+}
+
+/* Header with Logo */
+header{
+  background:rgba(0,0,0,.7); 
+  backdrop-filter:blur(12px); 
+  position:sticky; 
+  top:0; 
+  z-index:60;
+  border-bottom: 1px solid rgba(78, 205, 196, 0.1);
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:1rem 1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  display:flex;
+  gap:.75rem;
+  align-items:center;
+  font-weight:900;
+  color:var(--yellow); 
+  font-family:'Poppins',sans-serif;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover {
+  transform: translateY(-2px);
+}
+
+/* Enhanced SVG Logo in Nav */
+.logo-svg {
+  width: 45px;
+  height: 45px;
+  filter: drop-shadow(0 0 10px rgba(78, 205, 196, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand:hover .logo-svg {
+  transform: rotate(10deg) scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.6));
+}
+
+nav ul{
+  display:flex;
+  gap:1.5rem;
+  list-style:none;
+}
+
+nav a{
+  font-weight:600;
+  color: var(--text);
+  transition:all .3s; 
+  font-family:'Poppins',sans-serif;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cyan);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--cyan);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a[aria-current="page"] {
+  color: var(--yellow);
+}
+
+nav a[aria-current="page"]::after {
+  width: 100%;
+  background: var(--yellow);
+}
+
+#menuBtn{
+  display:none; 
+  background:rgba(78, 205, 196, 0.1); 
+  border:1px solid rgba(78, 205, 196, 0.3); 
+  color:#fff; 
+  font-weight:700;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#menuBtn:hover {
+  background: rgba(78, 205, 196, 0.2);
+  border-color: var(--cyan);
+}
+
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:2.5rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Hero Section */
+.hero{
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  border-radius:20px;
+  padding:3.5rem 2.5rem;
+  color:#fff;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards 0.2s;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--yellow), var(--cyan), var(--yellow));
+  background-size: 200% 100%;
+  animation: shimmerBar 3s linear infinite;
+}
+
+@keyframes shimmerBar {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1{
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(2rem,4vw,3.2rem);
+  margin:.6rem 0;
+  color:#fff;
+  text-shadow:0 0 20px rgba(255,221,89,0.5);
+  animation: glowText 2s ease-in-out infinite alternate;
+  position: relative;
+  display: inline-block;
+}
+
+.hero h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--yellow), var(--cyan));
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--yellow);
+}
+
+.hero p{
+  color:rgba(255,255,255,.95); 
+  margin-bottom:1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.cta{
+  background:linear-gradient(135deg, var(--yellow), #ffc107); 
+  color:var(--bg);
+  padding:.9rem 2rem; 
+  border-radius:999px; 
+  font-weight:700;
+  display:inline-block; 
+  transition:all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-top:0.5rem; 
+  font-family:'Poppins',sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(255,221,89,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition: left 0.6s;
+}
+
+.cta:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 20px 40px rgba(255,221,89,.6);
+}
+
+.cta:hover::before {
+  left: 100%;
+}
+
+/* Floating Elements in Hero */
+.hero-animation {
+  position:absolute; 
+  top:0; 
+  left:0; 
+  width:100%; 
+  height:100%; 
+  pointer-events:none; 
+  z-index:0;
+}
+
+.hero-animation .circle {
+  position:absolute; 
+  border-radius:50%;
+  opacity:0.2; 
+  animation:floatEnhanced 12s ease-in-out infinite;
+  filter: blur(40px);
+}
+
+.hero-animation .circle:nth-child(1){
+  background:var(--cyan); 
+  width: 150px;
+  height: 150px;
+  top:10%; 
+  left:5%; 
+  animation-delay:0s;
+}
+
+.hero-animation .circle:nth-child(2){
+  background:var(--yellow); 
+  width: 120px;
+  height: 120px;
+  top:50%; 
+  right:10%; 
+  animation-delay:1.5s;
+}
+
+.hero-animation .circle:nth-child(3){
+  background:var(--blue-600); 
+  width: 100px;
+  height: 100px;
+  bottom:20%; 
+  left:40%; 
+  animation-delay:3s;
+}
+
+@keyframes floatEnhanced {
+  0%,100% { transform: translateY(0) rotate(0deg) scale(1);}
+  25% { transform: translateY(-30px) rotate(90deg) scale(1.1);}
+  50% { transform: translateY(-60px) rotate(180deg) scale(1.2);}
+  75% { transform: translateY(-30px) rotate(270deg) scale(1.1);}
+}
+
+@keyframes glowText{
+  0% { text-shadow:0 0 10px rgba(255,221,89,0.5);}
+  100% { text-shadow:0 0 30px rgba(255,221,89,0.8), 0 0 50px rgba(78,205,196,0.5);}
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections */
+section{
+  margin-top:3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-label {
+  color: var(--cyan);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.section-title{
+  font-size:2rem;
+  margin-bottom:.8rem; 
+  font-family:'Poppins',sans-serif;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--green));
+  border-radius: 2px;
+}
+
+.lead{
+  color:var(--grey);
+  margin-bottom:1.5rem; 
+  font-style:italic;
+  font-size: 1.05rem;
+}
+
+/* Enhanced Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;
+}
+
+.card{
+  background:var(--card); 
+  padding:2rem; 
+  border-radius:16px;
+  box-shadow:var(--shadow); 
+  border:1px solid rgba(78, 205, 196, 0.1);
+  transition:all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--green));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.02); 
+  box-shadow:0 25px 50px rgba(78,205,196,.3);
+  border-color: rgba(78, 205, 196, 0.3);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--cyan);
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.card p {
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* Icon for cards */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+}
+
+/* Enhanced Timeline */
+.timeline{
+  margin-top:2rem;
+  padding-left:2rem;
+  position:relative;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.8s ease;
+}
+
+.timeline.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:0.7rem;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:linear-gradient(180deg, var(--cyan), var(--green));
+  box-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+.tl-item{
+  position:relative;
+  margin:1.8rem 0;
+  padding-left:2rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.5s ease;
+}
+
+.tl-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tl-item::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.5rem;
+  width:1rem;
+  height:1rem;
+  border-radius:999px;
+  background:var(--cyan);
+  box-shadow:0 0 0 4px rgba(78,205,196,.2), 0 0 15px rgba(78,205,196,.4);
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.tl-item:hover::before {
+  transform: scale(1.4);
+  box-shadow: 0 0 0 6px rgba(78,205,196,.3), 0 0 20px rgba(78,205,196,.6);
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+.tl-item-content {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Mission/Vision Grid */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Enhanced Team Grid */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:2rem;
+  margin-top:2rem;
+}
+
+.member{
+  background:var(--card); 
+  border-radius:16px; 
+  padding:1.5rem; 
+  box-shadow:var(--shadow);
+  border:1px solid rgba(78, 205, 196, 0.1); 
+  transition:all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.member::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--yellow));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.member.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.member:hover{
+  transform:translateY(-15px) scale(1.03); 
+  box-shadow:0 30px 60px rgba(78,205,196,.4);
+  border-color: rgba(78, 205, 196, 0.3);
+}
+
+.member:hover::before {
+  transform: scaleX(1);
+}
+
+.member-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+}
+
+.member img{
+  width:100%; 
+  height:260px; 
+  object-fit:cover; 
+  background:#0b0f1a; 
+  border-radius:12px;
+  transition:transform .6s ease, filter .6s ease;
+  filter: grayscale(0.4) brightness(0.9);
+}
+
+.member:hover img{
+  transform:scale(1.1) rotate(2deg);
+  filter: grayscale(0) brightness(1);
+}
+
+.member h3{
+  font-family:'Poppins',sans-serif;
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.role{
+  color:var(--cyan);
+  font-size:.95rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.socials{
+  display:flex;
+  gap:.6rem;
+  margin-top:.8rem;
+}
+
+.socials a{
+  width:38px;
+  height:38px;
+  border-radius:10px;
+  display:inline-grid;
+  place-items:center;
+  background:rgba(78, 205, 196, 0.1);
+  color:var(--cyan);
+  transition:all .3s;
+  border: 1px solid rgba(78, 205, 196, 0.2);
+  font-weight: 700;
+}
+
+.socials a:hover{
+  transform:translateY(-4px) scale(1.1); 
+  box-shadow:0 10px 25px rgba(78,205,196,.4);
+  background: var(--cyan);
+  color: var(--bg);
+  border-color: var(--cyan);
+}
+
+/* Contact Card */
+.contact-card {
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(78, 205, 196, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--yellow), var(--cyan));
+  background-size: 200% 100%;
+  animation: shimmerBar 3s linear infinite;
+}
+
+.contact-card strong {
+  color: var(--cyan);
+}
+
+.contact-card a {
+  color: var(--yellow);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: var(--cyan);
+}
+
+/* Footer */
+footer{
+  background:#0b1220;
+  color:#cbd5e1;
+  padding:2rem 0;
+  margin-top:4rem;
+  border-top: 1px solid rgba(78, 205, 196, 0.1);
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 1s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.foot{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 1.5rem;
+}
+
+.foot .brand {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .mission-grid{grid-template-columns:1fr}
+}
+
+@media(max-width:640px){
+  nav ul{display:none}
+  #menuBtn{display:inline-block}
+  nav ul.open{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    right:1rem;
+    top:70px;
+    background:rgba(0,0,0,0.95);
+    backdrop-filter:blur(20px);
+    padding:1rem;
+    border-radius:12px;
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    min-width: 180px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .team-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .mission-grid{grid-template-columns:1fr}
+  .foot {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .hero {
+    padding: 2.5rem 1.5rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Background Effects -->
+<div class="particles-container" id="particles"></div>
+<div class="grid-bg"></div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="Home page.html">
+      <!-- Enhanced SVG Logo -->
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="45" fill="url(#navLogoGrad)" opacity="0.2"/>
+        <path d="M 30 35 L 30 70 L 50 65 L 50 30 Z" fill="url(#navLogoGrad)"/>
+        <path d="M 70 35 L 70 70 L 50 65 L 50 30 Z" fill="url(#navLogoGrad)" opacity="0.7"/>
+        <circle cx="35" cy="45" r="4" fill="#ffdd59"/>
+        <circle cx="50" cy="40" r="4" fill="#ffdd59"/>
+        <circle cx="65" cy="45" r="4" fill="#ffdd59"/>
+        <line x1="35" y1="45" x2="50" y2="40" stroke="#ffdd59" stroke-width="1.5"/>
+        <line x1="50" y1="40" x2="65" y2="45" stroke="#ffdd59" stroke-width="1.5"/>
+        <text x="50" y="62" font-size="22" font-weight="bold" fill="white" text-anchor="middle" font-family="Poppins">CC</text>
+      </svg>
+      <span>Campus Connect</span>
+    </a>
+    <nav>
+      <button id="menuBtn">Menu</button>
+      <ul id="mainNav">
+        <li><a href="Home page.html">Home</a></li>
+        <li><a href="About.html" aria-current="page">About</a></li>
+        <li><a href="Service.html">Services</a></li>
+        <li><a href="Enquiry.html">Enquiry</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero container">
+    <div class="hero-animation">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <div class="hero-content">
+      <h1>Connecting Students, Resources & Opportunities</h1>
+      <p>Campus Connect is a student-first platform that helps learners share notes, form study groups, and access campus opportunities — thoughtfully designed and locally run by students who understand your journey.</p>
+      <a class="cta" href="Service.html">Explore Our Services</a>
+    </div>
+  </section>
+
+  <section id="history">
+    <div class="section-header">
+      <span class="section-label">About the Organisation</span>
+      <h2 class="section-title">Our Journey So Far</h2>
+    </div>
+    <p class="lead">From a small student project to a campus-wide movement empowering thousands of learners.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🚀</div

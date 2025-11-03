@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Your Enquiry • Campus Connect - We're Here to Help</title>
+<meta name="description" content="Have questions about Campus Connect? Submit your enquiry and our team will respond within 24 hours with personalized guidance and support.">
+<meta name="keywords" content="campus connect enquiry, student questions, academic support, student services enquiry">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Submit Your Enquiry • Campus Connect">
+<meta property="og:description" content="Get personalized support and answers to your questions about our services.">
+<meta property="og:type" content="website">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' style='stop-color:%231e3a8a'/%3E%3Cstop offset='1' style='stop-color:%232563eb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23g)'/%3E%3Ctext x='50' y='65' font-size='40' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'%3ECC%3C/text%3E%3C/svg%3E">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Poppins:wght@600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #1e3a8a;
+  --secondary: #2563eb;
+  --accent: #16a34a;
+  --yellow: #ffdd59;
+  --cyan: #4ecdc4;
+  --bg: #0b0f1a;
+  --card: #111827;
+  --shadow: 0 10px 30px rgba(0,0,0,0.5);
+  --muted: #94a3b8;
+  --text: #e0e7ff;
+}
+
+/* RESET */
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body {
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* Enhanced Background with Particles */
+.particles-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at top, #1e3a8a 0%, #0b0f1a 100%);
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(78, 205, 196, 0.15);
+  animation: floatParticle 20s infinite linear;
+  box-shadow: 0 0 10px rgba(78, 205, 196, 0.2);
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-1000%) translateX(100%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Animated Grid Background */
+.grid-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(78, 205, 196, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(78, 205, 196, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveGrid 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveGrid {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 50px 50px, 50px 50px; }
+}
+
+/* NAVIGATION */
+header {
+  position:sticky; 
+  top:0; 
+  z-index:50; 
+  background:rgba(0,0,0,0.8);
+  backdrop-filter: blur(12px);
+  box-shadow:0 2px 20px rgba(0,0,0,0.3);
+  animation: slideDown 0.6s ease-out;
+  border-bottom: 1px solid rgba(78, 205, 196, 0.1);
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.nav {
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 1.5rem;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  font-weight:900;
+  color:var(--yellow);
+  transition: transform 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+}
+
+.brand:hover {
+  transform: translateY(-2px);
+}
+
+.logo-svg {
+  width: 45px;
+  height: 45px;
+  filter: drop-shadow(0 0 10px rgba(78, 205, 196, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand:hover .logo-svg {
+  transform: rotate(10deg) scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(78, 205, 196, 0.6));
+}
+
+nav ul {display:flex;gap:1.5rem;list-style:none;}
+
+nav a {
+  color:var(--text);
+  font-weight:600;
+  text-decoration:none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition:all .3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cyan);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {color:var(--cyan);}
+nav a:hover::after {width: 100%;}
+
+nav a[aria-current="page"] {color:var(--yellow);}
+nav a[aria-current="page"]::after {
+  width: 100%;
+  background: var(--yellow);
+}
+
+#menuBtn {
+  display: none;
+  background:rgba(78, 205, 196, 0.1);
+  border:1px solid rgba(78, 205, 196, 0.3);
+  color:#fff;
+  font-weight:700;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#menuBtn:hover {
+  background: rgba(78, 205, 196, 0.2);
+  border-color: var(--cyan);
+}
+
+/* HERO */
+.hero {
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:5rem 2rem 4rem;
+  color:#fff;
+  border-radius:0 0 40px 40px;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.2s;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--yellow), var(--cyan), var(--yellow));
+  background-size: 200% 100%;
+  animation: shimmerBar 3s linear infinite;
+}
+
+@keyframes shimmerBar {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.hero h1 {
+  font-size:clamp(2.5rem, 5vw, 3.5rem);
+  font-weight:900;
+  animation:fadeInDown 1s ease forwards;
+  position:relative;
+  display:inline-block;
+  text-shadow:0 0 30px rgba(255,221,89,0.5);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.hero h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--yellow), var(--cyan));
+  border-radius: 2px;
+  box-shadow: 0 0 15px var(--yellow);
+}
+
+.hero p {
+  margin-top:1.5rem;
+  color:#cbd5e1;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:1.15rem;
+  animation:fadeInUp 1s ease 0.3s forwards;
+  opacity:0;
+  line-height: 1.8;
+}
+
+.hero p a {
+  color: var(--yellow);
+  font-weight:700;
+  text-decoration:none;
+  position: relative;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid var(--yellow);
+}
+
+.hero p a:hover { 
+  color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+/* Floating circles animation */
+.circle {
+  position:absolute;
+  border-radius:50%;
+  opacity:0.2;
+  animation:floatEnhanced 15s infinite ease-in-out;
+  filter: blur(40px);
+}
+
+.circle.one {
+  width:200px;
+  height:200px;
+  background:var(--cyan);
+  top:10%;
+  left:-50px;
+  animation-duration:18s;
+}
+
+.circle.two {
+  width:150px;
+  height:150px;
+  background:var(--yellow);
+  bottom:10%;
+  right:-50px;
+  animation-duration:22s;
+}
+
+.circle.three {
+  width:120px;
+  height:120px;
+  background:var(--secondary);
+  top:40%;
+  right:10%;
+  animation-duration:20s;
+}
+
+@keyframes floatEnhanced {
+  0%,100% {transform:translateY(0) scale(1) rotate(0deg);}
+  25% {transform:translateY(-30px) scale(1.1) rotate(90deg);}
+  50% {transform:translateY(-60px) scale(1.2) rotate(180deg);}
+  75% {transform:translateY(-30px) scale(1.1) rotate(270deg);}
+}
+
+/* ENQUIRY FORM */
+main {
+  max-width:900px;
+  margin:0 auto 4rem;
+  padding:0 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.4s;
+}
+
+form {
+  background:var(--card);
+  padding:3rem 2.5rem;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(78, 205, 196, 0.1);
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cyan), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(78,205,196,0.3);
+}
+
+form:hover::before {
+  transform: scaleX(1);
+}
+
+form h2 {
+  margin-bottom:0.5rem;
+  color:#fff;
+  position: relative;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+}
+
+form h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: var(--cyan);
+  border-radius: 2px;
+}
+
+.form-subtitle {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.5s; }
+.form-group:nth-child(2) { animation-delay: 0.6s; }
+.form-group:nth-child(3) { animation-delay: 0.7s; }
+.form-group:nth-child(4) { animation-delay: 0.8s; }
+.form-group:nth-child(5) { animation-delay: 0.9s; }
+
+form label {
+  display:block;
+  margin-bottom:.6rem;
+  font-weight:600;
+  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+form input, form textarea, form select {
+  width:100%;
+  padding:.85rem 1.1rem;
+  border:2px solid rgba(78, 205, 196, 0.2);
+  border-radius:12px;
+  font-size:1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--muted);
+}
+
+form input:focus, form textarea:focus, form select:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(78,205,196,.15), 0 0 20px rgba(78,205,196,0.2);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+form textarea {
+  min-height: 140px;
+  resize: vertical;
+  transition: min-height 0.3s ease;
+}
+
+form textarea:focus {
+  min-height: 160px;
+}
+
+form button {
+  background:linear-gradient(135deg,var(--yellow),#ffc107);
+  color:var(--bg);
+  padding:1rem 2.5rem;
+  border:none;
+  font-weight:700;
+  border-radius:999px;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(255,221,89,0.4);
+  transition:all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards 1s;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition: left 0.6s;
+}
+
+form button:hover {
+  transform:translateY(-5px) scale(1.02);
+  box-shadow:0 20px 40px rgba(255,221,89,0.6);
+}
+
+form button:hover::before {
+  left: 100%;
+}
+
+form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  background: rgba(22, 163, 74, 0.1);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+  text-align: center;
+}
+
+.success-message.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Info Card */
+.info-card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+  border: 1px solid rgba(78, 205, 196, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.info-card h3 {
+  color: var(--cyan);
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.info-list {
+  list-style: none;
+  color: var(--muted);
+}
+
+.info-list li {
+  padding: 0.6rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.info-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  background:#0b1220;
+  color:var(--muted);
+  padding:2rem 0;
+  margin-top:3rem;
+  text-align:center;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 1.2s;
+  border-top: 1px solid rgba(78, 205, 196, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0%{opacity:0;transform:translateY(40px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeInDown {
+  0%{opacity:0;transform:translateY(-40px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeIn {
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  form {
+    padding: 2rem 1.5rem;
+  }
+  form h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  #menuBtn{display:inline-block}
+  nav ul{
+    display:none;
+    position:absolute;
+    right:1rem;
+    top:70px;
+    background:rgba(0,0,0,0.95);
+    backdrop-filter:blur(20px);
+    padding:1rem;
+    border-radius:12px;
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  }
+  nav ul.open{
+    display:flex;
+    flex-direction:column;
+    min-width:180px;
+  }
+  nav li a{padding:.5rem .6rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Background Particles -->
+<div class="particles-container" id="particles"></div>
+<div class="grid-bg"></div>
+
+<header>
+  <div class="nav">
+    <a href="Home page.html" class="brand">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="45" fill="url(#navLogoGrad)" opacity="0.2"/>
+        <path d="M 30 35 L 30 70 L 50 65 L 50 30 Z" fill="url(#navLogoGrad)"/>
+        <path d="M 70 35 L 70 70 L 50 65 L 50 30 Z" fill="url(#navLogoGrad)" opacity="0.7"/>
+        <circle cx="35" cy="45" r="4" fill="#ffdd59"/>
+        <circle cx="50" cy="40" r="4" fill="#ffdd59"/>
+        <circle cx="65" cy="45" r="4" fill="#ffdd59"/>
+        <line x1="35" y1="45" x2="50" y2="40" stroke="#ffdd59" stroke-width="1.5"/>
+        <line x1="50" y1="40" x2="65" y2="45" stroke="#ffdd59" stroke-width="1.5"/>
+        <text x="50" y="62" font-size="22" font-weight="bold" fill="white" text-anchor="middle" font-family="Poppins">CC</text>
+      </svg>
+      <span>Campus Connect</span>
+    </a>
+    <nav>
+      <button id="menuBtn">Menu</button>
+      <ul id="mainNav">
+        <li><a href="Home page.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Service.html">Services</a></li>
+        <li><a href="Enquiry.html" aria-current="page">Enquiry</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+  <div class="circle three"></div>
+  <h1>Submit Your Enquiry</h1>
+  <p>
+    Have questions or need guidance? Fill out the form below and our dedicated team will assist you promptly. 
+    You can also <a href="Service.html">explore our services</a> to learn more about what we offer.
+  </p>
+</section>
+
+<!-- ENQUIRY FORM -->
+<main>
+  <form id="enquiryForm" action="#" method="post">
+    <h2>We're Here to Help</h2>
+    <p class="form-subtitle">Please provide your details and we'll get back to you within 24 hours</p>
+    
+    <div class="form-group">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" placeholder="John Doe" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" placeholder="john.doe@university.ac.za" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="service">Select Service *</label>
+      <select id="service" name="service" required>
+        <option value="">--Choose a Service--</option>
+        <option value="study-groups">Study Groups</option>
+        <option value="resources">Resource Library</option>
+        <option value="quizzes">Quizzes & Assessments</option>
+        <option value="mentorship">Mentorship Program</option>
+        <option value="general">General Enquiry</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="message">Your Message *</label>
+      <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+    </div>
+
+    <button type="submit" id="submitBtn">Submit Enquiry</button>
+    
+    <div id="successMessage" class="success-message">
+      <div class="success-icon">✓</div>
+      <strong>Thank you for your enquiry!</strong><br>
+      We've received your message and will respond within 24 hours.
+    </div>
+  </form>
+
+  <div class="info-card">
+    <h3>What Happens Next?</h3>
+    <ul class="info-list">
+      <li>Your enquiry is routed to the appropriate team member</li>
+      <li>We review your question and gather relevant information</li>
+      <li>You'll receive a personalized response within 24 hours</li>
+      <li>Follow-up support is available if you need additional help</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Campus Connect. Built for students, by students.</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Create floating particles
+  function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 25;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      const size = Math.random() * 4 + 2;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      
+      const delay = Math.random() * 20;
+      const duration = Math.random() * 10 + 20;
+      particle.style.animationDelay = `${delay}s`;
+      particle.style.animationDuration = `${duration}s`;
+      
+      particlesContainer.appendChild(particle);
+    }
+  }
+
+  // Mobile nav toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mainNav = document.getElementById('mainNav');
+  if(menuBtn){
+    menuBtn.addEventListener('click', ()=>{
+      const open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+  }
+
+  // Form submission
+  const enquiryForm = document.getElementById('enquiryForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const successMessage = document.getElementById('successMessage');
+
+  enquiryForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value.trim();
+    
+    // Simple validation
+    if (!name || !email || !service || !message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    if (!email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    
+    // Simulate form submission
+    setTimeout(() => {
+      // Show success message
+      successMessage.classList.add('show');
+      
+      // Scroll to success message
+      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Reset button
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Enquiry';
+      
+      // Reset form after delay
+      setTimeout(() => {
+        enquiryForm.reset();
+        successMessage.classList.remove('show');
+      }, 5000);
+    }, 1500);
+  });
+
+  // Initialize particles
+  createParticles();
+</script>
+</body>
+</html>
